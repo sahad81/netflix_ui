@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/dowlords/dow.dart';
+
+import 'package:netfilx_app_ui_api/infrastruture/presentetion/downloads/dow.dart';
 import 'package:netfilx_app_ui_api/infrastruture/presentetion/home/Home.dart';
 import 'package:netfilx_app_ui_api/infrastruture/presentetion/hot_and_new/hot_and_new.dart';
 
@@ -12,7 +13,7 @@ import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/search.dart
 class Screenmainpage extends StatelessWidget {
    Screenmainpage({super.key});
  
-final List  list=[
+ List  list=[
   Homepage(),
   Hotandnew(),
   ScreenFastLsugh(),
@@ -27,10 +28,10 @@ final List  list=[
       body: ValueListenableBuilder(valueListenable:indexnotifire , builder:(context, page, child) {
         return list[page];
       },),
-
-      bottomNavigationBar: BottomNavigationwidget(),
+     bottomNavigationBar: BottomNavigationwidget(),
     )
-    ;
     
+;    
   }
 }
+
