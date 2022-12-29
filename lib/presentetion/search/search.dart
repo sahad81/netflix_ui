@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netfilx_app_ui_api/presentetion/search/widgets/search_result_widget,.dart';
 
 
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/search_idel.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/search_result_widget,.dart';
 
 
 class Searchsreen extends StatelessWidget {
@@ -54,7 +53,7 @@ class Searchsreen extends StatelessWidget {
                           ),
 
 
-          Expanded(child: 
+          const Expanded(child: 
           SearchResult()
          // SearchIdelWidget()
           )

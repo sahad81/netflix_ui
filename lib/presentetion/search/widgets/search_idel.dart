@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
 
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/titile.dart';
+import 'package:netfilx_app_ui_api/presentetion/search/widgets/titile.dart';
 
 final deme =
     "https://www.shutterstock.com/image-photo/empty-highway-asphalt-road-beautiful-260nw-1516762826.jpg";

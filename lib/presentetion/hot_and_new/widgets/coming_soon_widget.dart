@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/home/widgets/homepagewidgets.dart';
+
+import 'package:netfilx_app_ui_api/presentetion/home/widgets/homepagewidgets.dart';
 
 class CominsoonWidget extends StatelessWidget {
   const CominsoonWidget({

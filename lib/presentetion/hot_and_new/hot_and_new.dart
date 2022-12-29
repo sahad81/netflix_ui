@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/home/widgets/homepagewidgets.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/hot_and_new/widgets/coming_soon_widget.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/hot_and_new/widgets/everyones_watching_widget.dart';
+
+import 'package:netfilx_app_ui_api/presentetion/hot_and_new/widgets/coming_soon_widget.dart';
+import 'package:netfilx_app_ui_api/presentetion/hot_and_new/widgets/everyones_watching_widget.dart';
 
 class Hotandnew extends StatelessWidget {
   const Hotandnew({super.key});

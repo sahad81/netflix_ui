@@ -1,7 +1,7 @@
 import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/titile.dart';
+
 
 class MaincardH extends StatelessWidget {
   const MaincardH({
@@ -17,7 +17,7 @@ class MaincardH extends StatelessWidget {
           width: 150,
           decoration: BoxDecoration(
               borderRadius: kredius,
-              image: DecorationImage(
+              image: const DecorationImage(
                   image: NetworkImage(
                       "https://i.pinimg.com/236x/d4/ab/46/d4ab467d3ae2479d6950d61f212fb5e0.jpg"),
                   fit: BoxFit.cover))),

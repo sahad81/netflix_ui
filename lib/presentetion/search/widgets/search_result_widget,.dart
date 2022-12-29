@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/titile.dart';
+
+import 'package:netfilx_app_ui_api/presentetion/search/widgets/titile.dart';
 final urlimage="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ryKwNlAfDXu0do6SX9h4G9Si1kG.jpg";
 class SearchResult extends StatelessWidget {
   const SearchResult({super.key});

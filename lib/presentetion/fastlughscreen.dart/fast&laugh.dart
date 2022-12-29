@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/fastlughscreen.dart/widgets/vediolistintem.dart';
-import 'package:netfilx_app_ui_api/infrastruture/presentetion/search/widgets/search_idel.dart';
+import 'package:netfilx_app_ui_api/presentetion/fastlughscreen.dart/widgets/vediolistintem.dart';
+import 'package:netfilx_app_ui_api/presentetion/search/widgets/search_idel.dart';
 
 class ScreenFastLsugh extends StatelessWidget {
   const ScreenFastLsugh({super.key});
