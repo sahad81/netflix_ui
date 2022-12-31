@@ -1,67 +1,108 @@
 
+
 import 'package:flutter/material.dart';
+
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
+import 'package:netfilx_app_ui_api/core/strings.dart';
+import 'package:netfilx_app_ui_api/domain/models/mode_in_search.dart';
+import 'package:netfilx_app_ui_api/infrastruture/serch/search_reposetory.dart';
 
 import 'package:netfilx_app_ui_api/presentetion/search/widgets/titile.dart';
 
-final deme =
+const deme =
     "https://www.shutterstock.com/image-photo/empty-highway-asphalt-road-beautiful-260nw-1516762826.jpg";
-
+ // ignore: non_constant_identifier_names
+ final Controller=ScrollController();
 class SearchIdelWidget extends StatelessWidget {
-  const SearchIdelWidget({super.key});
+    const SearchIdelWidget({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
+    
+   
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         hight,
-     titile(text: "Top Searches"),
+        const titile(text: "Top  10 Searches"),
         hight,
         Expanded(
-          child: ListView.separated(
-              shrinkWrap: true,
-              itemBuilder: (context, index) => Items(),
-              separatorBuilder: (context, index) => hight,
-              itemCount: 10),
-        )
+          child: FutureBuilder<ModelSerarch?>(
+              future: SearchRepo().topshearches(1,),
+              builder: (context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  // ignore: no_leading_underscores_for_local_identifiers
+                  ModelSerarch _data = snapshot.data;
+
+                  return ListView.separated(
+                    controller:Controller
+                   ,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => Items(
+                            imagename:
+                                "$kImageBaseUrl${_data.results![index].posterpath}",
+                            moviename: _data.results![index].title == null
+                                ?" ${_data.results![index].name}"
+                                : '${_data.results![index].title}',
+                          ),
+                      separatorBuilder: (context, index) => hight,
+                      itemCount: 10);
+                    
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              }),
+        ), 
+      
       ],
     );
   }
+  
+
 }
 
-
-
+// ignore: must_be_immutable
 class Items extends StatelessWidget {
-  Items({super.key});
+  String moviename;
+  String imagename;
+  Items({super.key, required this.imagename, required this.moviename});
 
   @override
   Widget build(BuildContext context) {
     final sizer = MediaQuery.of(context).size.width;
     return Row(children: [
-      Container(
-        width: sizer * 0.35,
-        height: 70,
-        decoration: BoxDecoration(
-            image:
-                DecorationImage(fit: BoxFit.cover, image: NetworkImage(deme))),
+      Padding(
+        padding: const EdgeInsets.only(right: 10),
+        child: Container(
+          width: sizer * 0.35,
+          height: 70,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: NetworkImage(imagename))),
+        ),
       ),
-      const Expanded(
+      Expanded(
           child: Text(
-        " Movie name",
-        style: TextStyle(
+        moviename,
+        style: const TextStyle(
             fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2),
       )),
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: CircleAvatar(
-          backgroundColor: white,
-          radius: 23,
-          child: CircleAvatar(
-            backgroundColor: Colors.black,
-            radius: 20,
-            child: IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow_rounded,color: white)))),
+            backgroundColor: white,
+            radius: 23,
+            child: CircleAvatar(
+                backgroundColor: Colors.black,
+                radius: 20,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.play_arrow_rounded, color: white)))),
       )
     ]);
   }
+
+  
 }

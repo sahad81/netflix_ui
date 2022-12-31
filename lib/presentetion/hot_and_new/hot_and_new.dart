@@ -15,10 +15,10 @@ class Hotandnew extends StatelessWidget {
       child: Scaffold(
           backgroundColor: backgroundcColor,
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(80),
+            preferredSize: const Size.fromHeight(80),
             child: AppBar(
               backgroundColor: backgroundcColor,
-              title: Text(
+              title: const Text(
                 "New and Hot",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
@@ -37,7 +37,7 @@ class Hotandnew extends StatelessWidget {
                   unselectedLabelColor: white,
                   indicator: BoxDecoration(
                       color: Colors.white, borderRadius: kredius30),
-                  tabs: [
+                  tabs: const [
                     Tab(
                       text: "🍟 Coming soon",
                     ),
@@ -54,6 +54,7 @@ class Hotandnew extends StatelessWidget {
   }
 }
 
+// ignore: non_constant_identifier_names
 Widget build_coming_soon(BuildContext context) {
   final sizee = MediaQuery.of(context).size.width;
   return ListView.builder(
@@ -65,6 +66,7 @@ Widget build_coming_soon(BuildContext context) {
   );
 }
 
+// ignore: non_constant_identifier_names
 Widget build_everyone_watching() {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 5),
@@ -72,7 +74,7 @@ Widget build_everyone_watching() {
       
       itemCount: 10,
       itemBuilder: (context, index) {
-      return everyonesWachingWidget();
+      return const everyonesWachingWidget();
     },));
 }
 

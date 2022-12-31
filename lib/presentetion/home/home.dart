@@ -9,10 +9,12 @@ import 'package:netfilx_app_ui_api/presentetion/home/widgets/homepagewidgets.dar
 ValueNotifier<bool> srollnotifire = ValueNotifier(true);
 
 class Homepage extends StatelessWidget {
-  Homepage({super.key});
+  const Homepage({super.key});
 
   @override
   Widget build(context) {
+    const firstimage =
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1200px-Netflix_icon.svg.png';
     return Scaffold(
         backgroundColor: backgroundcColor,
         body: ValueListenableBuilder(
@@ -36,7 +38,6 @@ class Homepage extends StatelessWidget {
                   children: [
                     SingleChildScrollView(
                       child: Column(
-                      
                         children: [
                           Stack(
                             children: [
@@ -103,7 +104,7 @@ class Homepage extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Top 10 tv shows in india tosay",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 22),
@@ -122,24 +123,22 @@ class Homepage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Maintaitilecard(titiles: "Tense Dramas"),
-                          Maintaitilecard(titiles: "south indian cinimas"),
+                          const Maintaitilecard(titiles: "Tense Dramas"),
+                          const Maintaitilecard(titiles: "south indian cinimas"),
                         ],
                       ),
                     ),
                     srollnotifire.value == true
                         ? AnimatedContainer(
-                          duration: Duration(microseconds: 100),
+                            duration: const Duration(microseconds: 100),
                             width: double.infinity,
                             height: 100,
-                           decoration: const BoxDecoration(
-                          gradient: LinearGradient(colors: [Colors.transparent, Colors.black],
-begin: Alignment.bottomCenter,
-end: Alignment.topCenter,
-
-
-)
-                           ),
+                            decoration: const BoxDecoration(
+                                gradient: LinearGradient(
+                              colors: [Colors.transparent, Colors.black],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            )),
                             child: Column(
                               children: [
                                 Row(
@@ -147,23 +146,29 @@ end: Alignment.topCenter,
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Image.network(
-                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/1200px-Netflix_icon.svg.png",
+                                        firstimage,
                                         height: 60,
                                         width: 60,
                                       ),
                                     ),
-                                    Spacer(),
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: Icon(Icons.cast,size: 40,color: Colors.white,),
-                                    )                                 ],
+                                    const Spacer(),
+                                    const Padding(
+                                      padding: EdgeInsets.only(right: 10),
+                                      child: Icon(
+                                        Icons.cast,
+                                        size: 40,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  ],
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-Text("Tv shows"),
-Text("Movies"),
-Text("categories")
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: const [
+                                    Text("Tv shows"),
+                                    Text("Movies"),
+                                    Text("categories")
                                   ],
                                 )
                               ],

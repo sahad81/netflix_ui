@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
 
 ValueNotifier<int>indexnotifire=ValueNotifier(0);
 
 class BottomNavigationwidget extends StatelessWidget {
-   BottomNavigationwidget({super.key});
+   const BottomNavigationwidget({super.key});
 
   @override
   Widget build(BuildContext context) {

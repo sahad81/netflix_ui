@@ -28,7 +28,7 @@ class CominsoonWidget extends StatelessWidget {
                     SizedBox(
                       width: 50,
                       height: 200,
-                      child: Column(children: [
+                      child: Column(children: const [
                         Text("FEB",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class CominsoonWidget extends StatelessWidget {
                         Container(
                           height: 200,
                           width: sizee - 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image: NetworkImage(imagecomingsoon),
                                   fit: BoxFit.cover)),
@@ -67,7 +67,7 @@ class CominsoonWidget extends StatelessWidget {
                     radius: 25,
                     backgroundColor: Colors.black.withOpacity(0.5),
                     child: Center(
-                      child: IconButton(onPressed: () {}, icon: Icon(Icons.volume_off)),
+                      child: IconButton(onPressed: () {}, icon: const Icon(Icons.volume_off)),
                     ),
                   ),
                 ),
@@ -79,7 +79,7 @@ class CominsoonWidget extends StatelessWidget {
         //      mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Row(children: [
+              Row(children: const [
                   Text("TALL GRIL 2",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold)),
                 Spacer(),
                 iconbtn(icon: Icons.notifications, text: "remaind me"),
@@ -91,9 +91,9 @@ class CominsoonWidget extends StatelessWidget {
               ),
               hight,
               hight,
-              Text("TALL GILE 2",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+              const Text("TALL GILE 2",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
                hight,
-              Text("landing the lead in the school musical is a\ndream come true  for jodi,undil the pressure\nsends her confidence -- and a relationship--\ninto a tailspin ",style: TextStyle(color: Colors.grey,fontSize: 16),)
+              const Text("landing the lead in the school musical is a\ndream come true  for jodi,undil the pressure\nsends her confidence -- and a relationship--\ninto a tailspin ",style: TextStyle(color: Colors.grey,fontSize: 16),)
             
               ],
             ),

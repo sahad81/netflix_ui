@@ -1,15 +1,23 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:netfilx_app_ui_api/application/maincontroll.dart';
+import 'package:netfilx_app_ui_api/domain/models/mode_in_search.dart';
+
+import 'package:netfilx_app_ui_api/presentetion/search/widgets/search_idel.dart';
 import 'package:netfilx_app_ui_api/presentetion/search/widgets/search_result_widget,.dart';
 
 
 
 
 class Searchsreen extends StatelessWidget {
-  const Searchsreen({super.key});
-
+   Searchsreen({super.key});
+final contrl=Get.put(Controllerr());
   @override
   Widget build(BuildContext context) {
+    contrl.typ.value=false;
     return Scaffold(
       body: 
       
@@ -22,21 +30,28 @@ class Searchsreen extends StatelessWidget {
                        
                            TextField(
                             
-                            onChanged: (value) {
-                           
+                            onChanged: (values) {
+                           if (values.isEmpty) {
+                            contrl.typ.value=false;
                               
+                           } else {
+                             contrl.typ.value=true;
+                           contrl.getsearchdata(values);
+                             log(ModelSerarch().results![0].title.toString());
+                           }
+                           
                             },
                             style: const TextStyle(),
                             textInputAction: TextInputAction.search,
                             onSubmitted: (value) {
-                              
+                                contrl.getsearchdata(value);
                              
                             
                             },
                             decoration: InputDecoration(
                                   filled: true, //<-- SEE HERE
       fillColor: Colors.grey.withOpacity(.4),
-                              suffixIcon: Icon(CupertinoIcons.xmark_circle_fill),
+                              suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill),
                                 prefixIcon: const Icon(Icons.search,color:Colors.grey,),
                                 hintText: "search",
                                 hintStyle: const TextStyle(color: Colors.white),
@@ -53,10 +68,15 @@ class Searchsreen extends StatelessWidget {
                           ),
 
 
-          const Expanded(child: 
-          SearchResult()
-         // SearchIdelWidget()
-          )
+           Obx(() => 
+              Expanded(child: 
+             
+                 contrl.typ.value==true?
+                   SearchResult()
+                   :
+                     const SearchIdelWidget()
+                     ),
+           )
         ],
       ),
     ))

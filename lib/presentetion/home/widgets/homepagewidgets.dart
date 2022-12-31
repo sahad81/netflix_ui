@@ -39,14 +39,14 @@ class Maintaitilecard extends StatelessWidget {
       children: [
         Text(
           titiles,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         hight,
         LimitedBox(
           maxHeight: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: List.generate(17, (index) => MaincardH()),
+            children: List.generate(17, (index) => const MaincardH()),
           ),
         ),
       ],
@@ -65,7 +65,7 @@ class CardwithNum extends StatelessWidget {
         children: [
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 150,
                 width: 45,
               ),
@@ -88,7 +88,7 @@ class CardwithNum extends StatelessWidget {
                   strokeWidth: 12,
                   child: Text(
                     "${index + 1}",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 130,
                       color: backgroundcColor,
                       decorationColor: Colors.white,fontWeight: FontWeight.bold
@@ -100,6 +100,7 @@ class CardwithNum extends StatelessWidget {
   }
 
 }
+// ignore: camel_case_types
 class iconbtn extends StatelessWidget {
   const iconbtn({
     Key? key, required this.icon, required this.text,

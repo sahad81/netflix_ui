@@ -1,52 +1,76 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
+import 'package:netfilx_app_ui_api/application/maincontroll.dart';
 
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
+import 'package:netfilx_app_ui_api/core/strings.dart';
+
 
 import 'package:netfilx_app_ui_api/presentetion/search/widgets/titile.dart';
-final urlimage="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ryKwNlAfDXu0do6SX9h4G9Si1kG.jpg";
-class SearchResult extends StatelessWidget {
-  const SearchResult({super.key});
 
+
+
+class SearchResult extends StatelessWidget {
+  SearchResult({super.key});
+final contr=Get.put(Controllerr());
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         hight,
-        titile(text: "Movies and Tv"),
+        const titile(text: "Movies and Tv"),
         hight,
-        Expanded(child: 
-        GridView.count(
-          mainAxisSpacing: 5,
-          childAspectRatio: 1/1.5,
-          crossAxisSpacing: 5,
-          shrinkWrap: true,
-          crossAxisCount: 3,
-children: 
-  List.generate(
-    20, (index) {
-    return  Maincard();
-  })
-
-        
-        ))
+        Expanded(
+            child: GridView.count(
+                mainAxisSpacing: 5,
+                childAspectRatio: 1 / 1.5,
+                crossAxisSpacing: 5,
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                children: List.generate(contr.modelSerarchcn!=null?contr.modelSerarchcn!.results!.length:1, (index) {
+                  return contr.modelSerarchcn==null?
+                  const Center(child: CircularProgressIndicator()): Maincard(
+                    index: index,
+                  );
+                })))
       ],
     );
   }
 }
-class Maincard extends StatelessWidget {
-   Maincard({super.key});
 
+// ignore: must_be_immutable
+class Maincard extends StatelessWidget {
+  Maincard({super.key, required this.index});
+  final int index;
+
+Controllerr controller=Get.put(Controllerr());
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-decoration: BoxDecoration(
-  image: DecorationImage(image: NetworkImage(urlimage)
-  ),
-  borderRadius: BorderRadius.circular(12)
-),
-
-    );
+  
+  //return Center(child: Text(Controller.modelSerarchcn.results![index].title.toString()),);
+ 
+  
+          return GetBuilder<Controllerr>(
+            builder: (c) {
+              return c.modelSerarchcn!.results![index].posterpath==null?
+const Center(child: CircularProgressIndicator()):Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                        
+                         
+                       "$kImageBaseUrl${controller.modelSerarchcn!.results![index].posterpath}"
+                           )),
+                  borderRadius: BorderRadius.circular(12)),
+        );
+            }
+          );
+        
+  
+    
   }
 }

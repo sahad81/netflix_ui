@@ -11,28 +11,29 @@ import 'package:netfilx_app_ui_api/presentetion/fastlughscreen.dart/fast&laugh.d
 import 'package:netfilx_app_ui_api/presentetion/mainpage/widgets/bottom_nav.dart';
 import 'package:netfilx_app_ui_api/presentetion/search/search.dart';
 
+// ignore: must_be_immutable
 class Screenmainpage extends StatelessWidget {
-   Screenmainpage({super.key});
- 
- List  list=[
-  Homepage(),
-  Hotandnew(),
-  ScreenFastLsugh(),
-  Searchsreen(),
-  Dowpage()
-];
-  
+  Screenmainpage({super.key});
+
+  List list = [
+    const Homepage(),
+    const Hotandnew(),
+    const ScreenFastLsugh(),
+    Searchsreen(),
+    Dowpage()
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: backgroundcColor,
-      body: ValueListenableBuilder(valueListenable:indexnotifire , builder:(context, page, child) {
-        return list[page];
-      },),
-     bottomNavigationBar: BottomNavigationwidget(),
-    )
-    
-;    
+      body: ValueListenableBuilder(
+        valueListenable: indexnotifire,
+        builder: (context, page, child) {
+          return list[page];
+        },
+      ),
+      bottomNavigationBar: const BottomNavigationwidget(),
+    );
   }
 }
-
