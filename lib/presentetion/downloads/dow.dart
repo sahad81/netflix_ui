@@ -1,18 +1,11 @@
-
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import 'package:netfilx_app_ui_api/application/maincontroll.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
 import 'package:netfilx_app_ui_api/core/strings.dart';
-import 'package:netfilx_app_ui_api/domain/models/dowlnoadsmodel/dowloadsmodel.dart';
-
+import 'package:netfilx_app_ui_api/domain/models/dowloadsmodel.dart';
 import 'package:netfilx_app_ui_api/infrastruture/downloadsDb/downloads_repository.dart';
 import 'package:netfilx_app_ui_api/presentetion/downloads/widgets/widgetzsdow.dart';
-
-DownloadModel dow = DownloadModel();
 
 class Dowpage extends StatelessWidget {
   Dowpage({super.key});
@@ -31,8 +24,8 @@ class Dowpage extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-            child: FutureBuilder<DownloadModel?>(
-                future: Dowrepo().fetchdowimage(),
+            child: FutureBuilder<TrandingModel?>(
+                future: Dowrepo().fetchimage("3"),
                 builder: (context, AsyncSnapshot snapshot) {
                   final data = snapshot.data;
                   if (snapshot.hasData) {
@@ -71,7 +64,7 @@ class Dowpage extends StatelessWidget {
                               backgroundColor: Colors.grey.withOpacity(.5),
                             ),
                           ),
-                        ImagewithContainer(
+                          ImagewithContainer(
                               margin: const EdgeInsets.only(left: 170, top: 50),
                               angle: 20,
                               size: Size(size.width * 0.35, size.width * 0.55),
@@ -141,5 +134,3 @@ class Dowpage extends StatelessWidget {
                 })));
   }
 }
-
-

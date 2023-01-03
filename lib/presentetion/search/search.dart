@@ -37,7 +37,7 @@ final contrl=Get.put(Controllerr());
                            } else {
                              contrl.typ.value=true;
                            contrl.getsearchdata(values);
-                             log(ModelSerarch().results![0].title.toString());
+                      
                            }
                            
                             },
@@ -49,7 +49,7 @@ final contrl=Get.put(Controllerr());
                             
                             },
                             decoration: InputDecoration(
-                                  filled: true, //<-- SEE HERE
+                                  filled: true,
       fillColor: Colors.grey.withOpacity(.4),
                               suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill),
                                 prefixIcon: const Icon(Icons.search,color:Colors.grey,),
@@ -67,7 +67,7 @@ final contrl=Get.put(Controllerr());
                                 )),
                           ),
 
-
+//check textfield is open or not=================================
            Obx(() => 
               Expanded(child: 
              

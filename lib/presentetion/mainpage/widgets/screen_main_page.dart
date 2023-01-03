@@ -16,7 +16,7 @@ class Screenmainpage extends StatelessWidget {
   Screenmainpage({super.key});
 
   List list = [
-    const Homepage(),
+     Homepage(),
     const Hotandnew(),
     const ScreenFastLsugh(),
     Searchsreen(),

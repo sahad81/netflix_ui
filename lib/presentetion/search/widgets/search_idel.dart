@@ -9,8 +9,6 @@ import 'package:netfilx_app_ui_api/infrastruture/serch/search_reposetory.dart';
 
 import 'package:netfilx_app_ui_api/presentetion/search/widgets/titile.dart';
 
-const deme =
-    "https://www.shutterstock.com/image-photo/empty-highway-asphalt-road-beautiful-260nw-1516762826.jpg";
  // ignore: non_constant_identifier_names
  final Controller=ScrollController();
 class SearchIdelWidget extends StatelessWidget {

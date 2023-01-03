@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
+
 import 'package:netfilx_app_ui_api/presentetion/fastlughscreen.dart/widgets/vediolistintem.dart';
 
 
@@ -13,7 +14,7 @@ class ScreenFastLsugh extends StatelessWidget {
       body: SafeArea(child: 
       PageView(
         scrollDirection: Axis.vertical,
-        children: List.generate(30, (index) {
+        children: List.generate(10, (index) {
         
           return vediolistItems(index: index,);
         })

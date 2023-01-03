@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:netfilx_app_ui_api/domain/core/api_enpoints.dart';
 import 'package:netfilx_app_ui_api/domain/models/mode_in_search.dart';
@@ -25,7 +26,7 @@ class SearchRepo {
 
         return modeldata;
       } else {
-        return null;
+        Get.snackbar("error", "result not foumd");
       }
     } catch (e) {
       log("eroor");

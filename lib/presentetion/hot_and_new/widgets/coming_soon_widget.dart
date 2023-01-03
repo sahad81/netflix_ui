@@ -4,15 +4,21 @@ import 'package:netfilx_app_ui_api/core/colors/const.dart';
 import 'package:netfilx_app_ui_api/presentetion/home/widgets/homepagewidgets.dart';
 
 class CominsoonWidget extends StatelessWidget {
-  const CominsoonWidget({
+   const CominsoonWidget({
     Key? key,
-    required this.sizee,
+    required this.day,
+    
+    required this.moviename,
+    required this.sizee, required this.image, required this.discription, required this.month,
   }) : super(key: key);
 
   final double sizee;
   
-
-
+ final  String moviename;
+ final String image;
+ final String discription;
+ final String day;
+ final String month;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,15 +34,15 @@ class CominsoonWidget extends StatelessWidget {
                     SizedBox(
                       width: 50,
                       height: 200,
-                      child: Column(children: const [
-                        Text("FEB",
-                            style: TextStyle(
+                      child: Column(children:  [
+                        Text(month,
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
                                 color: Colors.grey)),
                         Text(
-                          "11",
-                          style: TextStyle(
+                          day,
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Colors.grey),
@@ -48,10 +54,11 @@ class CominsoonWidget extends StatelessWidget {
                         Container(
                           height: 200,
                           width: sizee - 50,
-                          decoration: const BoxDecoration(
+                          decoration:  BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(imagecomingsoon),
-                                  fit: BoxFit.cover)),
+                                  image: NetworkImage(image),
+                                  fit: BoxFit.cover
+                                  )),
                         ),
                    
                       ],
@@ -79,21 +86,26 @@ class CominsoonWidget extends StatelessWidget {
         //      mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Row(children: const [
-                  Text("TALL GRIL 2",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold)),
-                Spacer(),
-                iconbtn(icon: Icons.notifications, text: "remaind me"),
-                SizedBox(width: 16,),
-                iconbtn(icon: Icons.info, text: "info"),
-                SizedBox(width: 20,),
+              Row(children:  [
+                  Expanded(
+                    child: Text(moviename,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold)),
+                  ),
+           
+                const iconbtn(icon: Icons.notifications, text: "remaind me"),
+                const SizedBox(width: 16,),
+                const iconbtn(icon: Icons.info, text: "info"),
+                const SizedBox(width: 20,),
             
               ],
               ),
               hight,
               hight,
-              const Text("TALL GILE 2",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+               Text(moviename,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
                hight,
-              const Text("landing the lead in the school musical is a\ndream come true  for jodi,undil the pressure\nsends her confidence -- and a relationship--\ninto a tailspin ",style: TextStyle(color: Colors.grey,fontSize: 16),)
+               Text(discription,style: TextStyle(color: Colors.grey,fontSize: 16),)
             
               ],
             ),

@@ -1,28 +1,33 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:netfilx_app_ui_api/core/colors/const.dart';
 import 'package:netfilx_app_ui_api/domain/core/api_enpoints.dart';
-import 'package:netfilx_app_ui_api/domain/models/dowlnoadsmodel/dowloadsmodel.dart';
+import 'package:netfilx_app_ui_api/domain/models/dowloadsmodel.dart';
 import 'package:http/http.dart' as http;
 
 class Dowrepo {
-Future <DownloadModel?>  fetchdowimage() async {
+// ignore: non_constant_identifier_names
+Future <TrandingModel?>  fetchimage( String Page) async {
     try {
-      final response = await http.get(Uri.parse(ApiEnpoints.apidownloads));
+      final response = await http.get(Uri.parse("${ApiEnpoints.apidownloads}&page=$Page"));
       if (response.statusCode == 200 || response.statusCode == 201) {
         log("seccess");
 
         var result = await jsonDecode(response.body);
-        var json =DownloadModel.fromJson(result);
-        log(json.results![0].backdropPath.toString());
+        var json =TrandingModel.fromJson(result);
+       
         return json;
       } else {
-        return null;
+        log('problem');
       }
     } catch (e) {
-   log("error");
+   log("error////////////////////////////");
+   Get.snackbar("error",e.toString(),backgroundColor: white,);
       //  // log(e.toString());
     }
-    return null;
+  
   }
 }

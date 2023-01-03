@@ -5,9 +5,9 @@ import 'package:netfilx_app_ui_api/core/colors/const.dart';
 
 class MaincardH extends StatelessWidget {
   const MaincardH({
-    Key? key,
+    Key? key,  this.image="$imagecomingsoon"
   }) : super(key: key);
-
+final String image;
   @override
   Widget build(context) {
     return Padding(
@@ -17,9 +17,9 @@ class MaincardH extends StatelessWidget {
           width: 150,
           decoration: BoxDecoration(
               borderRadius: kredius,
-              image: const DecorationImage(
+              image:  DecorationImage(
                   image: NetworkImage(
-                      "https://i.pinimg.com/236x/d4/ab/46/d4ab467d3ae2479d6950d61f212fb5e0.jpg"),
+                     image,),
                   fit: BoxFit.cover))),
     );
   }
@@ -27,11 +27,13 @@ class MaincardH extends StatelessWidget {
 
 class Maintaitilecard extends StatelessWidget {
   final String titiles;
-  const Maintaitilecard({
+   Maintaitilecard({
     Key? key,
+    required this.num_of_cards,
     required this.titiles,
+  
   }) : super(key: key);
-
+  int num_of_cards;
   @override
   Widget build(context) {
     return Column(
@@ -46,7 +48,7 @@ class Maintaitilecard extends StatelessWidget {
           maxHeight: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: List.generate(17, (index) => const MaincardH()),
+            children: List.generate(num_of_cards, (index) => const MaincardH()),
           ),
         ),
       ],
@@ -55,8 +57,9 @@ class Maintaitilecard extends StatelessWidget {
 }
 
 class CardwithNum extends StatelessWidget {
-  const CardwithNum({super.key, required this.index});
+   CardwithNum({super.key, required this.index,required this.image});
   final int index;
+  final image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -74,9 +77,9 @@ class CardwithNum extends StatelessWidget {
                   width: 150,
                   decoration: BoxDecoration(
                       borderRadius: kredius,
-                      image: const DecorationImage(
+                      image:  DecorationImage(
                           image: NetworkImage(
-                              "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7wuKrFvbX7kAIF0ctotARsqayPo.jpg"),
+                             image),
                           fit: BoxFit.cover))),
             ],
           ),
