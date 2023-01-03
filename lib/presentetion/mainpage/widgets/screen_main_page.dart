@@ -7,7 +7,7 @@ import 'package:netfilx_app_ui_api/presentetion/home/home.dart';
 
 import 'package:netfilx_app_ui_api/presentetion/hot_and_new/hot_and_new.dart';
 
-import 'package:netfilx_app_ui_api/presentetion/fastlughscreen.dart/fast&laugh.dart';
+import 'package:netfilx_app_ui_api/presentetion/fastlughscreen.dart/fast_laugh.dart';
 import 'package:netfilx_app_ui_api/presentetion/mainpage/widgets/bottom_nav.dart';
 import 'package:netfilx_app_ui_api/presentetion/search/search.dart';
 

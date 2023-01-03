@@ -91,7 +91,7 @@ class CominsoonWidget extends StatelessWidget {
                     child: Text(moviename,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold)),
+                    style: const TextStyle(fontSize: 35,fontWeight: FontWeight.bold)),
                   ),
            
                 const iconbtn(icon: Icons.notifications, text: "remaind me"),
@@ -103,9 +103,9 @@ class CominsoonWidget extends StatelessWidget {
               ),
               hight,
               hight,
-               Text(moviename,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+               Text(moviename,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
                hight,
-               Text(discription,style: TextStyle(color: Colors.grey,fontSize: 16),)
+               Text(discription,style: const TextStyle(color: Colors.grey,fontSize: 16),)
             
               ],
             ),

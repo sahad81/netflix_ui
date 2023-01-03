@@ -50,9 +50,8 @@ class SearchResult extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
-
 // ==================cards================
+// ignore: must_be_immutable
 class Maincard extends StatelessWidget {
   Maincard({super.key, required this.index});
   final int index;

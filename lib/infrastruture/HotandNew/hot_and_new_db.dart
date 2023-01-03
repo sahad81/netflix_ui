@@ -26,6 +26,7 @@ class HotandNewRepoo {
     }
     return null;
   }
+    // ignore: non_constant_identifier_names
     Future<ModelHotAndNew?> hotandnewfetchdata_everyone_is_watching() async {
     try {
       final response = await http.get(Uri.parse(ApiEnpoints.apiforNewAndHotEveryoneisWatching));

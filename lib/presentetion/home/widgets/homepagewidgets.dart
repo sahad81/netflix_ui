@@ -5,7 +5,7 @@ import 'package:netfilx_app_ui_api/core/colors/const.dart';
 
 class MaincardH extends StatelessWidget {
   const MaincardH({
-    Key? key,  this.image="$imagecomingsoon"
+    Key? key,  this.image=imagecomingsoon
   }) : super(key: key);
 final String image;
   @override
@@ -25,41 +25,13 @@ final String image;
   }
 }
 
-class Maintaitilecard extends StatelessWidget {
-  final String titiles;
-   Maintaitilecard({
-    Key? key,
-    required this.num_of_cards,
-    required this.titiles,
-  
-  }) : super(key: key);
-  int num_of_cards;
-  @override
-  Widget build(context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          titiles,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-        ),
-        hight,
-        LimitedBox(
-          maxHeight: 200,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: List.generate(num_of_cards, (index) => const MaincardH()),
-          ),
-        ),
-      ],
-    );
-  }
-}
+
 
 class CardwithNum extends StatelessWidget {
-   CardwithNum({super.key, required this.index,required this.image});
+   const CardwithNum({super.key, required this.index,required this.image});
   final int index;
-  final image;
+ 
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Padding(

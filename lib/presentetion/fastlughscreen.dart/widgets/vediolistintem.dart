@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
+
 import 'package:netfilx_app_ui_api/core/colors/const.dart';
 import 'package:netfilx_app_ui_api/core/strings.dart';
 import 'package:netfilx_app_ui_api/domain/models/dowloadsmodel.dart';
-import 'package:netfilx_app_ui_api/domain/models/mode_in_search.dart';
+
 import 'package:netfilx_app_ui_api/infrastruture/downloadsDb/downloads_repository.dart';
 
 // ignore: camel_case_types
@@ -49,12 +49,12 @@ class vediolistItems extends StatelessWidget {
                                "$kImageBaseUrl${data.results![index].backdropPath}"),
                           ),
                           hight,
-                          VedioActionWidget(
+                          const VedioActionWidget(
                               icon: Icons.emoji_emotions, titile: "LOL"),
-                          VedioActionWidget(icon: Icons.add, titile: "My list"),
+                          const VedioActionWidget(icon: Icons.add, titile: "My list"),
                           const VedioActionWidget(icon: Icons.share, titile: "Share"),
                           const VedioActionWidget(icon: Icons.play_arrow, titile: "Play"),
-                          SizedBox(
+                          const SizedBox(
                             height: 60,
                           )
                         ],
@@ -70,7 +70,7 @@ class vediolistItems extends StatelessWidget {
       );
       
     } else {
-    return  Center(child: CircularProgressIndicator());
+    return  const Center(child: CircularProgressIndicator());
     }  
     
       }
